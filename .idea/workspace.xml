@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b4dace9-0cb1-4ca9-94b9-e2d1e22db778" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/meituan.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/waimai.py" afterPath="$PROJECT_DIR$/waimai.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/waimaiObj.py" afterPath="$PROJECT_DIR$/waimaiObj.py" />
     </list>
     <ignored path="meituan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,12 +42,12 @@
       <file leaf-file-name="waimaiObj.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/waimaiObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="130" column="30" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+            <state relative-caret-position="667">
+              <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
-                <marker date="1541747505110" expanded="true" signature="6890:7011" ph="INSERT INTO waimai_meituan... " />
-                <marker date="1541747505110" expanded="true" signature="6896:7011" ph="INSERT INTO waimai_meituan... " />
+                <marker date="1541749197320" expanded="true" signature="6946:7067" ph="INSERT INTO waimai_meituan... " />
+                <marker date="1541749197320" expanded="true" signature="6952:7067" ph="INSERT INTO waimai_meituan... " />
               </folding>
             </state>
           </provider>
@@ -446,12 +441,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/waimaiObj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="130" column="30" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+        <state relative-caret-position="667">
+          <caret line="59" column="40" selection-start-line="59" selection-start-column="40" selection-end-line="59" selection-end-column="40" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
-            <marker date="1541747505110" expanded="true" signature="6890:7011" ph="INSERT INTO waimai_meituan... " />
-            <marker date="1541747505110" expanded="true" signature="6896:7011" ph="INSERT INTO waimai_meituan... " />
+            <marker date="1541749197320" expanded="true" signature="6946:7067" ph="INSERT INTO waimai_meituan... " />
+            <marker date="1541749197320" expanded="true" signature="6952:7067" ph="INSERT INTO waimai_meituan... " />
           </folding>
         </state>
       </provider>

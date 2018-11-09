@@ -51,17 +51,17 @@ class waimaiObj:
     offset = 0
 
     def __init__(self):
-        client = MongoClient(
-            'mongodb://lepu:mongo.collections.lepu@dds-2ze26c3eb2e21bf41339-pub.mongodb.rds.aliyuncs.com:3717/lepu?authSource=lepu')
-        lepu = client.lepu
-        shop = lepu.shop
-        shop_lonlat = shop.find({"city": 1}, {"_id": 0, "lonlat": 1}).sort('id', -1).skip(self.offset).limit(1)
-        self.offset += 1
-        for myresult in shop_lonlat:
-            # 未登录的情况下只能看前面的100个商家
-            print(myresult)
-            self.push_request(myresult['lonlat'][0], myresult['lonlat'][1])
-        time.sleep(3)
+        while self.offset <= 30000 :
+            client = MongoClient(
+                'mongodb://lepu:mongo.collections.lepu@dds-2ze26c3eb2e21bf41339-pub.mongodb.rds.aliyuncs.com:3717/lepu?authSource=lepu')
+            lepu = client.lepu
+            shop = lepu.shop
+            shop_lonlat = shop.find({"city": 1}, {"_id": 0, "lonlat": 1}).sort('id', -1).skip(self.offset).limit(1)
+            for myresult in shop_lonlat:
+                # 未登录的情况下只能看前面的100个商家
+                print(myresult)
+                self.push_request(myresult['lonlat'][0], myresult['lonlat'][1])
+                time.sleep(3)
     def push_request(self, lon, lat):
         # Google 代理头信息
         file_name = './H85VGZS80R80AP5D_37AAA4DCAF5E1F5F@http-dyn.abuyun.com_9020.zip'
