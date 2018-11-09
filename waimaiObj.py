@@ -102,8 +102,9 @@ class waimaiObj:
                 print('poilist---------')
                 # 循环页面的商家列表
                 poilist = browser.find_element(By.CLASS_NAME, 'list')
-                db = pymysql.connect("rm-2ze53x25prbr5p80f0o.mysql.rds.aliyuncs.com", "spiderdev", "spiderdev",
-                                     "spider_datadb")
+                db = pymysql.connect(host='rm-2ze53x25prbr5p80f0o.mysql.rds.aliyuncs.com', port=3306, user='spiderdev',
+                                     passwd='spiderdev', db='spider_datadb')
+
                 for one_shop in poilist.find_elements(By.CLASS_NAME, 'rest-li'):
                     try:
                         one_shop.find_element_by_tag_name('a').click()
@@ -131,13 +132,16 @@ class waimaiObj:
                         tmp_data['phone'] = str(phone[0])
                         tmp_data['shop_name'] = str(shop_name)
                         tmp_data['address'] = str(address)
-                        #tmp_data['created_at'] = str(time.time()).split('.')[0]
+                        tmp_data['created_at'] = str(time.time()).split('.')[0]
                         cursor = db.cursor()
-                        sql_insert = "INSERT INTO waimai_meituan(shop_name,phone,all_phone,address) VALUES ('{shop_name}', '{phone}','{all_phone}','{address}')".format(
+                        sql_insert = "INSERT INTO waimai_meituan(shop_name,phone,all_phone,address,created_at) VALUES ('{shop_name}', '{phone}','{all_phone}','{address}','{created_at}')".format(
                             **tmp_data)
                         print(sql_insert)
-                        res = cursor.execute(sql_insert)
-                        print(res)
+                        try:
+                            res = cursor.execute(sql_insert)
+                            db.commit()
+                        except:
+                            db.rollback()
                         cursor.close()
                         time.sleep(2)
                         # 关闭当前选项卡
