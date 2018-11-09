@@ -2,16 +2,12 @@ from selenium import webdriver
 import time
 
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 import string
 import zipfile
 import os
 import pymysql
 import random
 import math
-import base64
 
 # 代理服务器
 proxyHost = "http-dyn.abuyun.com"
@@ -89,7 +85,6 @@ def create_proxy_auth_extension(proxy_host, proxy_port,
     with zipfile.ZipFile(plugin_path, 'w') as zp:
         zp.writestr("manifest.json", manifest_json)
         zp.writestr("background.js", background_js)
-    # print("bbbbbb")
 
     return plugin_path
 
