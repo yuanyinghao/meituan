@@ -62,6 +62,8 @@ class waimaiObj:
                 print(myresult)
                 self.push_request(myresult['lonlat'][0], myresult['lonlat'][1])
                 time.sleep(3)
+            self.offset +=1
+            exit()
     def push_request(self, lon, lat):
         # Google 代理头信息
         file_name = './H85VGZS80R80AP5D_37AAA4DCAF5E1F5F@http-dyn.abuyun.com_9020.zip'
@@ -158,7 +160,7 @@ class waimaiObj:
             # 查看下一页
             browser.find_element(By.ID, 'loading').find_element(By.CLASS_NAME, 'isloading').click()
         except:
-            browser.quit()
+            #browser.quit()
             pass
 
     def create_proxy_auth_extension(self, proxy_host, proxy_port,
