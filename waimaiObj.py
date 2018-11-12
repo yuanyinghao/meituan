@@ -13,12 +13,17 @@ import math
 
 class waimaiObj:
     # 代理服务器
-    proxyHost = "http-dyn.abuyun.com"
-    proxyPort = "9020"
+    #proxyHost = "http-dyn.abuyun.com"
+    #proxyPort = "9020"
+    proxyHost = "http-proxy-sg2.dobel.cn"
+    proxyPort = "9180"
+    
 
     # 代理隧道验证信息
-    proxyUser = "H85VGZS80R80AP5D"
-    proxyPass = "37AAA4DCAF5E1F5F"
+    #proxyUser = "H85VGZS80R80AP5D"
+    #proxyPass = "37AAA4DCAF5E1F5F"
+    proxyUser = "LEPUHTTTEST1"
+    proxyPass = "T67b2DQe"
     # H8S586W474G3005D
     # F516EB80A1F0EC9F
 
