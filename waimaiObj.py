@@ -53,7 +53,7 @@ class waimaiObj:
         {'User-Agent': 'Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1)'}
     ]
 
-    offset = 220
+    offset = 3220
 
     def __init__(self):
         while self.offset <= 30000 :
@@ -68,6 +68,7 @@ class waimaiObj:
                 self.push_request(myresult['lonlat'][0], myresult['lonlat'][1])
                 time.sleep(3)
             self.offset +=1
+            print(self.offset)
            # exit()
     def push_request(self, lon, lat):
         # Google 代理头信息
@@ -102,7 +103,7 @@ class waimaiObj:
             browser.get('https://www.meituan.com/')
             # 百度的坐标
             de_lonlat = self.bd_decrypt(lon, lat)
-            post_url = 'https://waimai.meituan.com/geo/geohash?lat={lat}&lng={lon}&addr=未知&from=m'.format(**de_lonlat)
+            post_url = 'http://waimai.meituan.com/geo/geohash?lat={lat}&lng={lon}&addr=未知&from=m'.format(**de_lonlat)
             print(post_url)
             browser.get(post_url)
             if str(browser.current_url).find('home') >= 0:
