@@ -53,7 +53,7 @@ class waimaiObj:
         {'User-Agent': 'Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1)'}
     ]
 
-    offset = 3220
+    offset = 3476
 
     def __init__(self):
         while self.offset <= 30000 :
