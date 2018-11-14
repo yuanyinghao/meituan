@@ -22,8 +22,8 @@ class waimaiObj:
     # 代理隧道验证信息
     #proxyUser = "H85VGZS80R80AP5D"
     #proxyPass = "37AAA4DCAF5E1F5F"
-    proxyUser = "LEPUHTTTEST1"
-    proxyPass = "T67b2DQe"
+    proxyUser = "LEPUHTT1"
+    proxyPass = "JJe9LK97"
     # H8S586W474G3005D
     # F516EB80A1F0EC9F
 
@@ -53,7 +53,7 @@ class waimaiObj:
         {'User-Agent': 'Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1)'}
     ]
 
-    offset = 3476
+    offset = 3567
 
     def __init__(self):
         while self.offset <= 30000 :
