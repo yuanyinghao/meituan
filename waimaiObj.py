@@ -53,7 +53,7 @@ class waimaiObj:
         {'User-Agent': 'Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1)'}
     ]
 
-    offset = 3567
+    offset = 3967
 
     def __init__(self):
         while self.offset <= 30000 :
@@ -72,7 +72,7 @@ class waimaiObj:
            # exit()
     def push_request(self, lon, lat):
         # Google 代理头信息
-        file_name = './H85VGZS80R80AP5D_37AAA4DCAF5E1F5F@http-dyn.abuyun.com_9020.zip'
+        file_name = './proxy.zip'
         file_exists = os.path.exists(file_name)
         if not file_exists:
             # 创建插件代理,如果文件已经创建,就不必再创建了
@@ -100,7 +100,7 @@ class waimaiObj:
         browser = webdriver.Chrome(options=option)
         try:
             # 只能以美团为入口 【因为他会设置一些Cookie】为了方便就不在复杂的弄了
-            browser.get('https://www.meituan.com/')
+            browser.get('http://www.meituan.com/')
             # 百度的坐标
             de_lonlat = self.bd_decrypt(lon, lat)
             post_url = 'http://waimai.meituan.com/geo/geohash?lat={lat}&lng={lon}&addr=未知&from=m'.format(**de_lonlat)
@@ -173,7 +173,7 @@ class waimaiObj:
                                     proxy_username, proxy_password,
                                     scheme='http', plugin_path=None):
         if plugin_path is None:
-            plugin_path = os.getcwd() + r'/{}_{}@http-dyn.abuyun.com_9020.zip'.format(proxy_username, proxy_password)
+            plugin_path = os.getcwd() + r'/proxy.zip'
 
         manifest_json = """
            {
