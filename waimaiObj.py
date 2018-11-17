@@ -53,7 +53,7 @@ class waimaiObj:
         {'User-Agent': 'Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1)'}
     ]
 
-    offset = 3967
+    offset = 4916
 
     def __init__(self):
         while self.offset <= 30000 :
@@ -100,7 +100,8 @@ class waimaiObj:
         browser = webdriver.Chrome(options=option)
         try:
             # 只能以美团为入口 【因为他会设置一些Cookie】为了方便就不在复杂的弄了
-            browser.get('http://www.meituan.com/')
+            browser.get('https://www.meituan.com/')
+            time.sleep(1)
             # 百度的坐标
             de_lonlat = self.bd_decrypt(lon, lat)
             post_url = 'http://waimai.meituan.com/geo/geohash?lat={lat}&lng={lon}&addr=未知&from=m'.format(**de_lonlat)
