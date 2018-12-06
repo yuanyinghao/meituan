@@ -9,6 +9,7 @@ import os
 import pymysql
 import random
 import math
+import shutil
 
 
 class waimaiObj:
@@ -53,7 +54,7 @@ class waimaiObj:
         {'User-Agent': 'Mozilla/4.0(compatible;MSIE7.0;WindowsNT5.1)'}
     ]
 
-    offset = 5581
+    offset = 0
 
     def __init__(self):
         while self.offset <= 30000 :
@@ -61,6 +62,9 @@ class waimaiObj:
                 'mongodb://lepu:mongo.collections.lepu@dds-2ze26c3eb2e21bf41339-pub.mongodb.rds.aliyuncs.com:3717/lepu?authSource=lepu')
             lepu = client.lepu
             shop = lepu.shop
+            offset = open("./offset.txt", 'r')
+            self.offset = offset.read()
+            print(self.offset)
             shop_lonlat = shop.find({"city": 1}, {"_id": 0, "lonlat": 1}).sort('id', 1).skip(self.offset).limit(1)
             for myresult in shop_lonlat:
                 # 未登录的情况下只能看前面的100个商家
@@ -68,6 +72,8 @@ class waimaiObj:
                 self.push_request(myresult['lonlat'][0], myresult['lonlat'][1])
                 time.sleep(3)
             self.offset +=1
+            offset.write(self.offset)
+            offset.close()
             print(self.offset)
            # exit()
     def push_request(self, lon, lat):
